@@ -2,6 +2,7 @@ const int ledpin = 13;
 void setup(){
  Serial.begin(9600);
  pinMode(ledpin, OUTPUT);
+ 
 }
 void loop(){
  if(Serial.available()>0){
@@ -41,3 +42,5 @@ else if(info==53){
 
 
 //if you use xbee shield - keep it clicked on USB cause you are using USB
+
+//serial.flush? or how else to prevent serial buffer from filling? 
