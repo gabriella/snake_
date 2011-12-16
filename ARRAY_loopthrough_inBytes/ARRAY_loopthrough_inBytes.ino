@@ -11,7 +11,7 @@ int nextServoValue = 120;
 
 int currentServo = 0;
 
-const int UPDATE_INTERVAL = 100;
+const int UPDATE_INTERVAL = 15;
 
 long lastUpdatedAt = 0;
 
@@ -40,19 +40,19 @@ byte inByte =Serial.read();
 //int inByte = Serial.parseInteger();
 //Serial.println(inByte);
 if(inByte == 50){
-  nextServoValue++;
+  nextServoValue=nextServoValue+8;
   Serial.println("up");
 }
 else if(inByte==49){
- nextServoValue--; 
+ nextServoValue = nextServoValue-8;; 
  Serial.println("down");
 }
-//    if(nextServoValue > 120){
-//      nextServoValue = 120;
-//    }
-//    else if(nextServoValue<60){
-//     nextServoValue = 60; 
-//    }
+    if(nextServoValue > 140){
+      nextServoValue = 140;
+    }
+    else if(nextServoValue<60){
+     nextServoValue = 60; 
+    }
  // Serial.println(nextServoValue);
 }
   
@@ -126,3 +126,4 @@ void adjustServos(){
 
 //send values from xbee
 //get one wave to start then stop
+//bigger jump between steps
