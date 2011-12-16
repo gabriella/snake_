@@ -6,12 +6,12 @@ const int NUM_SERVOS = 3;
 Servo servos[NUM_SERVOS];
 const int FIRST_SERVO_PIN=2;
 
-int nextServoValue = 0;
+int nextServoValue = 120;
 
 
 int currentServo = 0;
 
-const int UPDATE_INTERVAL = 1000;
+const int UPDATE_INTERVAL = 100;
 
 long lastUpdatedAt = 0;
 
@@ -80,12 +80,36 @@ void adjustServos(){
     Serial.println("passing down");
     passDownServoValues(nextServoValue);
     
-    nextServoValue = nextServoValue + 30;
-    if(nextServoValue > 130){
-      nextServoValue = 0;
-    }
+    
+    
+    //go again
+//    nextServoValue = nextServoValue + 30;
+//    if(nextServoValue > 120){
+//      nextServoValue = 60;
+//    }
+
+//if(Serial.available()>0){
+//byte inByte =Serial.read();
+//Serial.println(inByte);
+//if(inByte = 1){
+//  nextServoValue++;
+//}
+//    if(nextServoValue > 120){
+//      nextServoValue = 120;
+//    }
+//    if(nextServoValue<60){
+//     nextServoValue = 60; 
+//    }
+//  
+//}
+//  
+  
+
+
+
     
   }
+ 
  
  // update all servos 
   //for(int i =0; i < NUM_SERVOS; i++){
@@ -93,3 +117,6 @@ void adjustServos(){
   //}
   //passDownServoValues(myValue);
 }
+
+//send values from xbee
+//get one wave to start then stop
