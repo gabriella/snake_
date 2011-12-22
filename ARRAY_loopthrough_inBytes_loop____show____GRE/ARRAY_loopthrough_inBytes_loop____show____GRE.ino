@@ -13,7 +13,7 @@ int nextServoValue = 120;
 
 int currentServo = 0;
 
-const int UPDATE_INTERVAL = 250;
+const int UPDATE_INTERVAL = 500;
 
 long lastUpdatedAt = 0;
 
